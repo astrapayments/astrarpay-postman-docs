@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "6a6d67ac-9d6b-471e-b15a-1090f70ac17a",
+		"name": "Astrapay - WEBHOOK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31548105"
+	},
+	"item": [
+		{
+			"name": "List My Webhooks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVVTk0SG9WcC1fRTM3d2pGVmV1Nm5TOEZHLXc5c0hkRHRzVHB5TkN1QkRBIn0.eyJleHAiOjE3MDg4NjM4MDUsImlhdCI6MTcwODg2MDIwNSwianRpIjoiZjdmMjdhNWUtNDFkOC00ZTAwLWFhY2UtZjYyMzdhYjdjMjczIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1obWwuYXN0cmFwYXkuY29tLmJyL2F1dGgvcmVhbG1zL2V4dGVybmFsLWN1c3RvbWVycyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkODk3NzFhNy02ZWFkLTQ3NmYtYWJmNC0zMTAzMGIzMTNkYTkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiIxMjM0NTYiLCJzZXNzaW9uX3N0YXRlIjoiMGI2ZmM0N2ItY2NlMS00NWMxLTk1OWItNDljZjY1OTE0YzViIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWV4dGVybmFsLWN1c3RvbWVycyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIwYjZmYzQ3Yi1jY2UxLTQ1YzEtOTU5Yi00OWNmNjU5MTRjNWIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiY3VzdG9tZXJJZCI6IjI4IiwibmFtZSI6IkZlbGlwZVRUIDEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmZWxpcGV0dEBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiRmVsaXBlVFQiLCJmYW1pbHlfbmFtZSI6IjEiLCJlbWFpbCI6ImZlbGlwZXR0QGdtYWlsLmNvbSJ9.M9CrbIdi8mAcMyan85YtEzAEJA4fkqAu_L9xLmBN5X9LHxaxc7gsFd996VO7tBAPI2F8O5c4uNMKgMZc1ayrkXUV0zUh81rYJ8Y8tHxa9gOXpk1vJKs2_lk9iUYG8FutPU0Tax_kws1nOJpS9zbTvPZapgLgDCoJ5qXLmjtErsyNEQJ3_fMgG5C-NrEWTBw0Xn3Pp2K3NeD3y_YGHfhedmj3Y09ZmlJJZB9Pwy65xMIo_mP_48t2CasN9a4opVdEilMWGXSh7_2Q2Pm8us96U_x0KOIT3i1S1VQS7mFEPOigHXHa5Jd5KKTKM1eqIak706vU64DuMjFm1SSlDgMQLQ"
+					}
+				],
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/webhook/v1",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"webhook",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create/Update Webhook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVVTk0SG9WcC1fRTM3d2pGVmV1Nm5TOEZHLXc5c0hkRHRzVHB5TkN1QkRBIn0.eyJleHAiOjE3MDg4NjM4MDUsImlhdCI6MTcwODg2MDIwNSwianRpIjoiZjdmMjdhNWUtNDFkOC00ZTAwLWFhY2UtZjYyMzdhYjdjMjczIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1obWwuYXN0cmFwYXkuY29tLmJyL2F1dGgvcmVhbG1zL2V4dGVybmFsLWN1c3RvbWVycyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkODk3NzFhNy02ZWFkLTQ3NmYtYWJmNC0zMTAzMGIzMTNkYTkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiIxMjM0NTYiLCJzZXNzaW9uX3N0YXRlIjoiMGI2ZmM0N2ItY2NlMS00NWMxLTk1OWItNDljZjY1OTE0YzViIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWV4dGVybmFsLWN1c3RvbWVycyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIwYjZmYzQ3Yi1jY2UxLTQ1YzEtOTU5Yi00OWNmNjU5MTRjNWIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiY3VzdG9tZXJJZCI6IjI4IiwibmFtZSI6IkZlbGlwZVRUIDEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmZWxpcGV0dEBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiRmVsaXBlVFQiLCJmYW1pbHlfbmFtZSI6IjEiLCJlbWFpbCI6ImZlbGlwZXR0QGdtYWlsLmNvbSJ9.M9CrbIdi8mAcMyan85YtEzAEJA4fkqAu_L9xLmBN5X9LHxaxc7gsFd996VO7tBAPI2F8O5c4uNMKgMZc1ayrkXUV0zUh81rYJ8Y8tHxa9gOXpk1vJKs2_lk9iUYG8FutPU0Tax_kws1nOJpS9zbTvPZapgLgDCoJ5qXLmjtErsyNEQJ3_fMgG5C-NrEWTBw0Xn3Pp2K3NeD3y_YGHfhedmj3Y09ZmlJJZB9Pwy65xMIo_mP_48t2CasN9a4opVdEilMWGXSh7_2Q2Pm8us96U_x0KOIT3i1S1VQS7mFEPOigHXHa5Jd5KKTKM1eqIak706vU64DuMjFm1SSlDgMQLQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"webhookType\": \"k\",\r\n\"webhookUrl\": \"https://astrapagamentos-en.readme.io/reference/createcob\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/webhook/v1",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"webhook",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
