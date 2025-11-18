@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "65d8a816-89df-442c-9f9d-b3a9297d4234",
+		"name": "Astrapay - Credit Card",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31548105"
+	},
+	"item": [
+		{
+			"name": "Create Credit Card Transaction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nameCreditCard\": \"Guilherme Gomes Da\",\r\n  \"expirationDate\": \"202811\",\r\n  \"cvv\": \"131\",\r\n  \"amount\": 5,\r\n  \"numbersInstallments\": 1,\r\n  \"idOriginTransaction\": \"1\",\r\n  \"description\": \"teste\",\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"typePayment\": \"A_VISTA\",\r\n  \"infoData\": {\r\n    \"cardholderCpf\": \"02546275100\",\r\n    \"cardholderName\": \"Guilherme Gomes da Silva\",\r\n    \"cardholderEmail\": \"guigomes.ti@gmail.com\",\r\n    \"cardholderPhone\": \"67992683450\",\r\n    \"cardholderAddress\": \"Rua das Flores\",\r\n    \"cardholderCity\": \"Araucária\",\r\n    \"cardholderState\": \"Paraná\",\r\n    \"cardholderPostalCode\": \"96321411\",\r\n    \"paymentOriginMetadata\": \"string\",\r\n    \"cardBrand\": \"string\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Credit Card Transaction Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nameCreditCard\": \"Guilherme Gomes Da\",\r\n  \"expirationDate\": \"202811\",\r\n  \"cvv\": \"131\",\r\n  \"amount\": 5,\r\n  \"numbersInstallments\": 1,\r\n  \"idOriginTransaction\": \"1\",\r\n  \"description\": \"teste\",\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"typePayment\": \"A_VISTA\",\r\n  \"infoData\": {\r\n    \"cardholderCpf\": \"02546275100\",\r\n    \"cardholderName\": \"Guilherme Gomes da Silva\",\r\n    \"cardholderEmail\": \"guigomes.ti@gmail.com\",\r\n    \"cardholderPhone\": \"67992683450\",\r\n    \"cardholderAddress\": \"Rua das Flores\",\r\n    \"cardholderCity\": \"Araucária\",\r\n    \"cardholderState\": \"Paraná\",\r\n    \"cardholderPostalCode\": \"96321411\",\r\n    \"paymentOriginMetadata\": \"string\",\r\n    \"cardBrand\": \"string\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Credit Card Transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Consult Credit Card Transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit/752",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"752"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Credit Card Transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.astrapay.com.br/card/v1/credit/999/cancel",
+					"protocol": "https",
+					"host": [
+						"api",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"999",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

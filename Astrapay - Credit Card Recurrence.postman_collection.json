@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "97c3377e-4de2-4781-8cbf-001ae5b23929",
+		"name": "Astrapay - Credit Card Recurrence",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31548105"
+	},
+	"item": [
+		{
+			"name": "Credit Card Transacion with Recurrence",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recurrenceType\": \"LIMITED_TIMES\",\r\n  \"recurrenceFrequency\": \"MONTHLY\",\r\n  \"recurrenceStartDate\": \"2025-06-25\",\r\n  \"numberInstallments\": 5,\r\n  \"installmentAmount\": 10,\r\n  \"expirationDate\": \"203005\",\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"cvv\": \"087\", \r\n  \"clientName\": \"Guilherme Gomes da\",\r\n  \"clientRegistrationNumber\": \"02546555100\",\r\n  \"userReference\": \"123\",\r\n  \"description\": \"teste\", \r\n  \"maxAttempts\": 3,\r\n  \r\n  \"infoData\": {\r\n    \"cardholderName\": \"Guilherme Gomes da Silva\",\r\n    \"cardholderCpf\": \"02546555100\"   ,\r\n    \"cardholderEmail\": \"testeeamail.ti@gmail.com\",\r\n    \"cardholderPhone\": \"67992683222\",\r\n    \"cardholderAddress\": \"Rua Guararapes 987\",\r\n    \"cardholderCity\": \"Campo Grande\",\r\n    \"cardholderState\": \"DF\",\r\n    \"cardholderPostalCode\": \"79055200\"\r\n\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "{{gateway}}/card/v1/credit/recurrence",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"recurrence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consult Recurrences",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/card/v1/credit/recurrence/25",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"recurrence",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Recurrences",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/card/v1/credit/recurrence?startDate=2024-01-01T00:00:00&endDate=2025-01-03T00:00:00",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"recurrence"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-01-01T00:00:00"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-01-03T00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Recorrência",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit/recurrence/cancel/24",
+					"protocol": "https",
+					"host": [
+						"api-sandbox",
+						"astrapay",
+						"com",
+						"br"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"recurrence",
+						"cancel",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Agendamento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/card/v1/credit/recurrence/schedules/cancel/199",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"recurrence",
+						"schedules",
+						"cancel",
+						"199"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar  Agendamentos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "{{$guid}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "mockedRequest",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{gateway}}/card/v1/credit/schedules",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"card",
+						"v1",
+						"credit",
+						"schedules"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
