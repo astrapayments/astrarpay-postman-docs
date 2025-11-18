@@ -81,7 +81,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Credit Card Transaction Copy",
+			"name": "Create Tokenized Credit Card Transaction",
 			"event": [
 				{
 					"listen": "test",
@@ -134,10 +134,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nameCreditCard\": \"Guilherme Gomes Da\",\r\n  \"expirationDate\": \"202811\",\r\n  \"cvv\": \"131\",\r\n  \"amount\": 5,\r\n  \"numbersInstallments\": 1,\r\n  \"idOriginTransaction\": \"1\",\r\n  \"description\": \"teste\",\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"typePayment\": \"A_VISTA\",\r\n  \"infoData\": {\r\n    \"cardholderCpf\": \"02546275100\",\r\n    \"cardholderName\": \"Guilherme Gomes da Silva\",\r\n    \"cardholderEmail\": \"guigomes.ti@gmail.com\",\r\n    \"cardholderPhone\": \"67992683450\",\r\n    \"cardholderAddress\": \"Rua das Flores\",\r\n    \"cardholderCity\": \"Araucária\",\r\n    \"cardholderState\": \"Paraná\",\r\n    \"cardholderPostalCode\": \"96321411\",\r\n    \"paymentOriginMetadata\": \"string\",\r\n    \"cardBrand\": \"string\"\r\n  }\r\n}"
+					"raw": "{\r\n  \"cardIdentificationBank\": \"bf351c29fc0a4731b692e92abb2dfbb8\",\r\n  \"registrationNumber\": \"11478598565\",\r\n  \"namePayer\": \"Felipe Rodrigues\",\r\n  \"amount\": 13,\r\n  \"numbersInstallments\": 2,\r\n  \"description\": \"Pagamento de bebida\",\r\n  \"typePayment\": \"A_VISTA\"\r\n}"
 				},
 				"url": {
-					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit",
+					"raw": "https://api-sandbox.astrapay.com.br/card/v1/credit/tokenize",
 					"protocol": "https",
 					"host": [
 						"api-sandbox",
@@ -148,7 +148,8 @@
 					"path": [
 						"card",
 						"v1",
-						"credit"
+						"credit",
+						"tokenize"
 					]
 				}
 			},
@@ -175,7 +176,7 @@
 					},
 					{
 						"key": "authorization",
-						"value": "Bearer {{token}}"
+						"value": "{{token}}"
 					}
 				],
 				"url": {
